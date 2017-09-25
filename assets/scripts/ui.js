@@ -16,7 +16,6 @@ const onSignInSuccess = function (data) {
   store.user = data.user
   store.token = data.user.token
   store.id = data.user.id
-  console.log(data)
 }
 
 const onSignInFailure = function (data) {
