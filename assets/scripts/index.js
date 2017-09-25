@@ -11,6 +11,7 @@ $(() => {
   $('.song-bars').hide()
   $('#sign-out').hide()
   $('.form-wrapper').show()
+  $('#changepassword').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file
