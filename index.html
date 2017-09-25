@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>RunForCover</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" href="./assets/styles/index.scss">
       <!-- Do not add `link` tags-->
@@ -29,5 +29,15 @@
       <div class="song-bars">Song 5 Here
         <input type=button value="yah"><input type=button value="nah">
       </div>
+      <form class="auth" id="sign-up">
+        <div class="sign-up-success">
+      <div class="form-group">
+        <input type="text" name="credentials[email]" id="email" placeholder="Email">
+        <input type="password" name="credentials[password]" id="password" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" id="password_confirmation" placeholder="Password Confirmation">
+        <button type="submit" class="btn btn-default">Sign Up</button>
+      </div>
+      </div>
+      </form>
     </body>
 </html>

@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.form-group {
+  border: none;
+text-align: center;
+}
+
 div {
   border: 2px solid black;
   font-family: "Helvetica", sans-serif;
@@ -9,14 +14,17 @@ div {
   width: 45%;
   z-index: 1;
 }
+
 h1 {
   text-align: center;
 }
+
 .prompt-div {
   font-size: 16px;
   height: 250px;
   text-align: center;
 }
+
 .song-bars {
   margin: 0 auto;
   text-align: center;
