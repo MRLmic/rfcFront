@@ -8,6 +8,16 @@ const createUser = function (data) {
     data
   })
 }
+
+const logIn = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in/',
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
-  createUser
+  createUser,
+  logIn
 }

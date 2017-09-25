@@ -10,9 +10,20 @@ const signUp = function (event) {
     .then($(this).trigger('reset'))
     .catch(userUi.onSignUpFailure)
 }
+
+const signIn = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  userApi.logIn(data)
+    .then(userUi.onSignInSuccess)
+    .then($(this).trigger('reset'))
+    .catch(userUi.onSignInFailure)
+}
+
 const addHandlers = function () {
 // auth jquery
-$('#sign-up').on('submit', signUp)
+  $('#sign-up').on('submit', signUp)
+  $('#sign-in').on('submit', signIn)
 }
 // auth
 module.exports = {

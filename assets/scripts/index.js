@@ -8,6 +8,7 @@ const authEvents = require('./events')
 $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
+  $('.song-bars').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file
