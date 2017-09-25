@@ -9,6 +9,8 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   $('.song-bars').hide()
+  $('#sign-out').hide()
+  $('.form-wrapper').show()
 })
 
 // use require with a reference to bundle the file and use it in this file

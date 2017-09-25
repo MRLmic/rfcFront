@@ -20,10 +20,18 @@ const signIn = function (event) {
     .catch(userUi.onSignInFailure)
 }
 
+const signOut = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  userApi.signOut(data)
+    .then(userUi.signOutSuccess)
+    .catch(userUi.signOutFailure)
+}
 const addHandlers = function () {
 // auth jquery
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
+  $('#sign-out').on('submit', signOut)
 }
 // auth
 module.exports = {
