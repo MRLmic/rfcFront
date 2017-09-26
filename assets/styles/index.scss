@@ -1,18 +1,19 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.form-group {
-  border: 0;
-  text-align: center;
-}
-
 div {
   border: 2px solid black;
   font-family: "Helvetica", sans-serif;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
   width: 45%;
   z-index: 1;
+}
+
+.form-group {
+  border: 0;
+  text-align: center;
 }
 
 h1 {
@@ -21,7 +22,7 @@ h1 {
 
 .prompt-div {
   font-size: 16px;
-  height: 250px;
+  height: 150px;
   text-align: center;
 }
 

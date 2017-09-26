@@ -3,9 +3,10 @@
     <head>
       <title>RunForCover</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="./assets/styles/index.scss">
+      <!-- rel=stylesheet removed -->
+      <link type="text/css" href="./assets/styles/index.scss">
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="./assets/styles/cactus.ico">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -13,22 +14,23 @@
     </head>
     <body class="container-fluid">
       <h1>>Run For Cover<</h1>
-      <div class="prompt-div">🎵Welcome to Run For Cover, the game where you guess whether songs are covers or original recordings. Please sign up or sign in to play!</div>
-      <div class="song-bars">Song 1 Here
+      <div class="prompt-div">🎵Welcome to Run For Cover, the app where you keep track of your favorite songs and  cover versions of those songs. Please sign up or sign in!</div>
+      <!-- <div class="song-bars">
         <input type=button value="yah"><input type=button value="nah">
-      </div>
-      <div class="song-bars">Song 2 Here
-        <input type=button value="yah"><input type=button value="nah">
-      </div>
-      <div class="song-bars">Song 3 Here
-        <input type=button value="yah"><input type=button value="nah">
-      </div>
-      <div class="song-bars">Song 4 Here
-        <input type=button value="yah"><input type=button value="nah">
-      </div>
-      <div class="song-bars">Song 5 Here
-        <input type=button value="yah"><input type=button value="nah">
-      </div>
+      </div> -->
+        <div>
+          Input song information here to add a song to your list.
+        <form class="auth" id="create-a-song">
+        <div class="form-group">
+          <input type="text" name="song[title]" id="new_title" placeholder="Title">
+          <input type="text" name="song[artist]" id="new_artist" placeholder="Artist"><br>
+          <input type="checkbox" name="song[written_by]" id="original_check" value="true" checked><label for='chk_email_alerts'>Song originally recorded by this artist?</label>
+          <input type="text" name="song[year]" id="new_year" placeholder="Year Recorded">
+          <button type="submit" class="btn btn-default">Add Song</button>
+        </div>
+        </form>
+        </div>
+      <!-- all auth html -->
       <div class="form-wrapper">
       <form class="auth" id="sign-up">
       <div class="form-group">
@@ -48,6 +50,7 @@
     </div>
     </form>
     </div>
+    <div class="form-wrapper">
     <form class="auth" id="sign-out">
       <div class="form-group">
         <input type="submit" value="sign out">
@@ -60,5 +63,6 @@
         <button type="submit" name="changepassword">Submit to Reset Password</button>
       </div>
       </form>
+    </div>
     </body>
 </html>

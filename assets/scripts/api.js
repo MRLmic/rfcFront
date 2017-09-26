@@ -1,6 +1,18 @@
 const config = require('./config')
 const store = require('./store')
 
+const newSong = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/songs',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    },
+    data
+  })
+}
+// auth api functions
 const createUser = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-up/',
@@ -43,5 +55,6 @@ module.exports = {
   createUser,
   logIn,
   signOut,
-  changePassword
+  changePassword,
+  newSong
 }

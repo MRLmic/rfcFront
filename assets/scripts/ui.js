@@ -1,6 +1,11 @@
 'use strict'
 const store = require('./store')
 
+const onNewSongSuccess = function (data) {
+  $('.prompt-div').text('New song created!')
+}
+
+// auth UI
 const onSignUpSuccess = function (data) {
   $('.prompt-div').text('User created! Please sign in to play.')
 }
@@ -15,7 +20,9 @@ const onSignInSuccess = function (data) {
   $('.song-bars').show()
   $('#sign-out').show()
   $('#changepassword').show()
+  $('#create-a-song').show()
   store.user = data.user
+  store.token = data.user.token
 }
 
 const onSignInFailure = function (data) {
@@ -50,5 +57,6 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   changeSuccess,
-  changeFailure
+  changeFailure,
+  onNewSongSuccess
 }
