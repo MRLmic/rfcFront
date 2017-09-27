@@ -41,15 +41,16 @@ const onGetSuccess = function (data) {
     $(this).closest('h4').append('<form class="update-a-song">Need to update something about your song? No problem! Enter the new information here.<div class="form-group"><input type="text" name="song[title]" id="new_title" placeholder="Title"><input type="text" name="song[artist]" id="new_artist" placeholder="Artist"><input type="checkbox" name="song[written_by]" id="original_check" value="true" checked><label for="chk_email_alerts">Song originally recorded by this artist?</label><input type="text" name="song[year]" id="new_year" placeholder="Year Recorded"><button type="submit" class="btn btn-default">Update Song</button></div></form>')
     $(".update-a-song").on('submit', function (event) {
       event.preventDefault()
-      $('#prompt-div').text('Song updated.')
+      $('.prompt-div').text('Song updated.')
       const songId = $(this).closest('h4').data('id')
       console.log(songId)
       const data = getFormFields(this)
       console.log(data)
       userApi.patchSong(data, songId)
         .then($('.update-a-song').text('Song updated! Click Show All Songs to see changes.'))
+        .then($('.prompt-div').text('Song Updated.'))
         .then($(this).trigger('reset'))
-        .catch($('.prompt-div').text('Action failed. You can only update your own songs, you sneaky 🐍'))
+        // .catch($('.prompt-div').text('Action failed. You can only update your own songs, you sneaky 🐍'))
     })
   })
 }
