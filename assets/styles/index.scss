@@ -1,6 +1,19 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  background-color: #e6e6fa;
+}
+
+.creates {
+  border-bottom: 0;
+}
+
+#deletes {
+  border: 0;
+  text-align: center;
+}
+
 div {
   border: 2px solid black;
   font-family: "Helvetica", sans-serif;
@@ -9,6 +22,7 @@ div {
   text-align: center;
   width: 45%;
   z-index: 1;
+  background-color: white;
 }
 
 .form-group {
@@ -26,7 +40,17 @@ h1 {
   text-align: center;
 }
 
+.show-songs {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 0;
+  border-top: 0;
+  height: 90px;
+  padding-top: 20px;
+}
+
 .song-bars {
+  border: 0;
   margin: 0 auto;
   text-align: center;
   width: 45%;

@@ -1,10 +1,36 @@
 'use strict'
 const store = require('./store')
+const songHandles = require('./templates/helpers/songs-listing.handlebars')
+const userApi = require('./api')
 
 const onNewSongSuccess = function (data) {
   $('.prompt-div').text('New song created!')
+  store.songs = data.songs
 }
 
+const onGetSuccess = function (data) {
+  console.log('on-get-success')
+  // const showSongs = function () {
+  console.log('here are songs')
+  $('.prompt-div').text('Your songs:')
+  const songHTML = songHandles({ songs: data.songs })
+  $('.song-bars').text('')
+  $('.song-bars').append(songHTML)
+  $('.delete-song').on('click', function (event) {
+    event.preventDefault()
+    $('#prompt-div').text('Song deleted.')
+    console.log(this)
+    const songId = $(this).parent().data('id')
+    console.log('song # ' + songId)
+    $(this).parent().remove()
+    userApi.deleteSong(songId)
+  })
+}
+
+const deleteSongSuccess = function (data) {
+  $('.song-bars').text('Songs deleted.')
+}
+// }
 // auth UI
 const onSignUpSuccess = function (data) {
   $('.prompt-div').text('User created! Please sign in to play.')
@@ -20,7 +46,10 @@ const onSignInSuccess = function (data) {
   $('.song-bars').show()
   $('#sign-out').show()
   $('#changepassword').show()
-  $('#create-a-song').show()
+  $('.creates').show()
+  $('#sign-out-change').show()
+  $('#songs-index').show()
+  $('.show-songs').show()
   store.user = data.user
   store.token = data.user.token
 }
@@ -58,5 +87,7 @@ module.exports = {
   onSignOutFailure,
   changeSuccess,
   changeFailure,
-  onNewSongSuccess
+  onNewSongSuccess,
+  onGetSuccess,
+  deleteSongSuccess
 }

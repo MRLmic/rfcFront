@@ -14,22 +14,27 @@ const createSong = function (event) {
   userApi.newSong(data)
     .then(userUi.onNewSongSuccess)
 }
-// handlebars
-const showSongs = function (data) {
-  console.log('here are songs')
-  $('.prompt-div').text('Your songs:')
-  const showSongHtml = songHandles({ songs: data.songs })
-  $('.song-bars').append(songHandles)
-  // $('.delete-movie').on('click', function () {
-  //   console.log('You have Successfully deleted your movie')
-  //   $('#message').text('You have successfully deleted the movie on your to-watch list')
-  //   const movieId = $(this).parent().parent().data('id')
-  //   console.log('this will delete movie # ' + movieId)
-  //   console.log(movieId)
-  //   $(this).parent().parent().remove()
-  //   api.deleteMovie(movieId)
-  // })
+
+const show = function (event) {
+  event.preventDefault()
+  userApi.get()
+    .then(userUi.onGetSuccess)
 }
+
+// const deleteSongs = function (event) {
+//   event.preventDefault()
+//   $(".checkbox input:checked").parent().parent().remove()
+//   const songId = $(".checkbox input:checked").closest('h4').data('id')
+//   console.log(songId)
+  //   const parentlist = []
+  //   for (var i = 0; i < list.length; i++) {
+  //   parentlist.push(list[i].parentNode.id)
+  // }
+  // const songId = $(this).parent().parent().data('id')
+  // userApi.deleteSong(songId)
+  //   .then(userUi.deleteSongSuccess)
+// }
+
 // auth functions
 const signUp = function (event) {
   event.preventDefault()
@@ -73,6 +78,8 @@ const addHandlers = function () {
   $('#sign-out').on('submit', signOut)
   $('#changepassword').on('submit', changePassword)
   $('#create-a-song').on('submit', createSong)
+  $('#songs-index').on('submit', show)
+  // $("#deletes").on("click", deleteSongs)
 }
 // auth
 module.exports = {

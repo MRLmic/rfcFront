@@ -1,0 +1,18 @@
+{{#each songs as |song|}}
+
+<h4 data-id="{{song.id}}">
+    "{{song.title}}"
+    <br> by {{song.artist}},
+    <br> recorded in {{song.year}}.
+    <br>Did this artist write this song? {{song.written_by}}
+    <br>
+    <form class="delete-song" id="delete-song">
+      <div class="form-group">
+          <button type="submit" class="btn btn-default">Delete</button>
+      </div>
+    </form>
+</h4><br>
+
+
+
+{{/each}}

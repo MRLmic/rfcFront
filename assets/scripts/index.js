@@ -12,6 +12,11 @@ $(() => {
   $('#sign-out').hide()
   $('.form-wrapper').show()
   $('#changepassword').hide()
+  $('.creates').hide()
+  $('#sign-out-change').hide()
+  $('#songs-index').hide()
+  $('.show-songs').hide()
+  $('#deletes').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

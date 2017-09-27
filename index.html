@@ -15,10 +15,9 @@
     <body class="container-fluid">
       <h1>>Run For Cover<</h1>
       <div class="prompt-div">🎵Welcome to Run For Cover, the app where you keep track of your favorite songs and  cover versions of those songs. Please sign up or sign in!</div>
-      <!-- <div class="song-bars">
-        <input type=button value="yah"><input type=button value="nah">
-      </div> -->
-        <div>
+
+       <!-- create song form -->
+        <div class="creates">
           Input song information here to add a song to your list.
         <form class="auth" id="create-a-song">
         <div class="form-group">
@@ -29,7 +28,20 @@
           <button type="submit" class="btn btn-default">Add Song</button>
         </div>
         </form>
+        <div class="song-bars">
         </div>
+      </div>
+
+        <!-- show all songs -->
+        <div class="show-songs">
+        <form class="auth" id="songs-index">
+            <div class="form-group">
+              <button type="submit" class="btn btn-default">Show All Songs</button>
+            </div>
+        </form>
+      </div>
+
+
       <!-- all auth html -->
       <div class="form-wrapper">
       <form class="auth" id="sign-up">
@@ -50,12 +62,13 @@
     </div>
     </form>
     </div>
-    <div class="form-wrapper">
+    <div class="form-wrapper" id="sign-out-change">
     <form class="auth" id="sign-out">
       <div class="form-group">
         <input type="submit" value="sign out">
       </div>
     </form>
+    Input new and old passwords to change password.
     <form class="auth" id="changepassword">
       <div class="form-group">
         <input type="password" name="passwords[old]" id="password" placeholder="old password">
