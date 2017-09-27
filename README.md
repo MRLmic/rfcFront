@@ -14,7 +14,7 @@
 <p>To plan for this project, I first read over the project requirements and created a Trello board for myself. On this board, as I completed tasks I would move them to a "Done" column. I also created a "Wish List" column which included things like CSS tweaks I wanted to make, but were not required.</p>
 
 <ul>
-<li>WireFrames<a href=https://imgur.com/a/BLw60></a></li>
+<li><a href=https://imgur.com/a/BLw60>WireFrames</a></li>
 </ul>
 <h3>User Stories</h3>
 <ol><li>I'm a user who is concerned about security and would like to log in to any website I use.</li>
