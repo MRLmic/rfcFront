@@ -15,7 +15,7 @@
 
 <ul>
 <li>WireFrames<a href=https://imgur.com/a/BLw60></li>
-</ul>>
+</ul>
 <h3>User Stories</h3>
 <ol><li>I'm a user who is concerned about security and would like to log in to any website I use.</li>
 <li>I'm a user who wants to be entertained by the appearance of a site.</li>
