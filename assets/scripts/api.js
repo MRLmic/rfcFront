@@ -46,7 +46,7 @@ const patchSong = function (data, songId) {
 // auth api functions
 const createUser = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/sign-up/',
+    url: config.apiOrigin + '/sign-up',
     method: 'POST',
     data
   })
@@ -54,7 +54,7 @@ const createUser = function (data) {
 
 const logIn = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/sign-in/',
+    url: config.apiOrigin + '/sign-in',
     method: 'POST',
     data
   })
