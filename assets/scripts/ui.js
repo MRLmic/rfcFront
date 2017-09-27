@@ -3,9 +3,10 @@ const store = require('./store')
 const songHandles = require('./templates/helpers/songs-listing.handlebars')
 const userApi = require('./api')
 const getFormFields = require('./../../lib/get-form-fields')
+const userEvents = require('./events')
 
 const onNewSongSuccess = function (data) {
-  $('.prompt-div').text('New song created!')
+  $('.prompt-div').text('New song created! Click Show All Songs to see.')
   // const newSong = songHandles({ songs: data.songs.first })
   store.songs = data.songs
   // const newestSong = data.songs.last
@@ -13,6 +14,9 @@ const onNewSongSuccess = function (data) {
   // $('.song-bars').append(newestSong)
 }
 
+const onNewSongFailure = function(data) {
+  $('.prompt-div').text('Something went wrong. Please try again. All song information is required.')
+}
 const onGetSuccess = function (data) {
   // const showSongs = function () {
   console.log('here are songs')
@@ -24,12 +28,13 @@ const onGetSuccess = function (data) {
   $('.update-a-song').hide()
   $('.delete-song').on('click', function (event) {
     event.preventDefault()
-    $('#prompt-div').text('Song deleted.')
     console.log(this)
     const songId = $(this).parent().data('id')
     console.log('song # ' + songId)
     $(this).parent().remove()
     userApi.deleteSong(songId)
+      .then($('.prompt-div').text('Song deleted.'))
+      .catch($('.prompt-div').text('Action failed. You can only delete your own songs, you sneaky 🐍'))
   })
   $('.update-song').on('click', function (event) {
     event.preventDefault()
@@ -42,7 +47,9 @@ const onGetSuccess = function (data) {
       const data = getFormFields(this)
       console.log(data)
       userApi.patchSong(data, songId)
-        .then(console.log('this is working'))
+        .then($('.update-a-song').text('Song updated! Click Show All Songs to see changes.'))
+        .then($(this).trigger('reset'))
+        .catch($('.prompt-div').text('Action failed. You can only update your own songs, you sneaky 🐍'))
     })
   })
 }
@@ -62,7 +69,7 @@ const onSignUpFailure = function (data) {
 
 const onSignInSuccess = function (data) {
   $('.log-in-stuff').hide()
-  $('.prompt-div').text('Can you guess whether these songs are covers or original recordings?')
+  $('.prompt-div').text('Enter song info to add a song, or click Show All Songs to see all the songs.')
   $('.song-bars').show()
   $('#sign-out').show()
   $('#changepassword').show()
@@ -75,11 +82,11 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInFailure = function (data) {
-  $('prompt-div').text('Oops, something went wrong. Please try again.')
+  $('.prompt-div').text('Oops, something went wrong. Please try again.')
 }
 
 const onSignOutSuccess = function (data) {
-  $('.prompt-div').text('Signed out. Please sign up or sign in to play.')
+  $('.prompt-div').text('Signed out. Please sign up or sign in to use the app.')
   $('.song-bars').hide()
   $('#sign-up').show()
   $('#sign-in').show()
@@ -88,6 +95,7 @@ const onSignOutSuccess = function (data) {
   $('.show-songs').hide()
   $('#sign-out-change').hide()
   $('.log-in-stuff').show()
+  $('.song-bars').text('')
 }
 
 const onSignOutFailure = function (data) {
@@ -99,7 +107,7 @@ const changeSuccess = function (data) {
 }
 
 const changeFailure = function (data) {
-  $('.turn').text('fail. try again')
+  $('.prompt-div').text('fail. try again')
 }
 
 module.exports = {
@@ -113,5 +121,6 @@ module.exports = {
   changeFailure,
   onNewSongSuccess,
   onGetSuccess,
-  deleteSongSuccess
+  deleteSongSuccess,
+  onNewSongFailure
 }

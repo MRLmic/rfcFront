@@ -13,6 +13,8 @@ const createSong = function (event) {
   const data = getFormFields(this)
   userApi.newSong(data)
     .then(userUi.onNewSongSuccess)
+    .then($(this).trigger('reset'))
+    .catch(userUi.onNewSongFailure)
 }
 
 const show = function (event) {
