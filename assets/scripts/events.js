@@ -79,7 +79,6 @@ const addHandlers = function () {
   $('#changepassword').on('submit', changePassword)
   $('#create-a-song').on('submit', createSong)
   $('#songs-index').on('submit', show)
-  // $("#deletes").on("click", deleteSongs)
 }
 // auth
 module.exports = {

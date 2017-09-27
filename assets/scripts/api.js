@@ -32,6 +32,17 @@ const deleteSong = function (songId) {
     }
   })
 }
+
+const patchSong = function (data, songId) {
+  return $.ajax({
+    url: config.apiOrigin + '/songs/' + songId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    },
+    data
+  })
+}
 // auth api functions
 const createUser = function (data) {
   return $.ajax({
@@ -78,5 +89,6 @@ module.exports = {
   changePassword,
   newSong,
   get,
-  deleteSong
+  deleteSong,
+  patchSong
 }

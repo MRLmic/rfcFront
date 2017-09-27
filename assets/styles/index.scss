@@ -25,6 +25,13 @@ div {
   background-color: white;
 }
 
+#delete-song{
+  text-align: center;
+}
+
+#update-song{
+  text-align: center;
+}
 .form-group {
   border: 0;
   text-align: center;
@@ -54,4 +61,11 @@ h1 {
   margin: 0 auto;
   text-align: center;
   width: 45%;
+}
+
+.updates {
+border: 0;
+overflow-wrap: word-break;
+text-align: center;
+width: 150%;
 }
