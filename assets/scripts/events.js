@@ -17,10 +17,11 @@ const createSong = function (event) {
     .catch(userUi.onNewSongFailure)
 }
 
-const show = function (event) {
+const showSongs = function (event) {
   event.preventDefault()
   userApi.get()
     .then(userUi.onGetSuccess)
+    .catch(userUi.onGetFailure)
 }
 
 // const deleteSongs = function (event) {
@@ -80,9 +81,10 @@ const addHandlers = function () {
   $('#sign-out').on('submit', signOut)
   $('#changepassword').on('submit', changePassword)
   $('#create-a-song').on('submit', createSong)
-  $('#songs-index').on('submit', show)
+  $('#songs-index').on('submit', showSongs)
 }
 // auth
 module.exports = {
-  addHandlers
+  addHandlers,
+  showSongs
 }
