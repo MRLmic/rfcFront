@@ -24,20 +24,6 @@ const showSongs = function (event) {
     .catch(userUi.onGetFailure)
 }
 
-// const deleteSongs = function (event) {
-//   event.preventDefault()
-//   $(".checkbox input:checked").parent().parent().remove()
-//   const songId = $(".checkbox input:checked").closest('h4').data('id')
-//   console.log(songId)
-  //   const parentlist = []
-  //   for (var i = 0; i < list.length; i++) {
-  //   parentlist.push(list[i].parentNode.id)
-  // }
-  // const songId = $(this).parent().parent().data('id')
-  // userApi.deleteSong(songId)
-  //   .then(userUi.deleteSongSuccess)
-// }
-
 // auth functions
 const signUp = function (event) {
   event.preventDefault()
