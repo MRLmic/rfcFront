@@ -55,6 +55,7 @@ const onGetSuccess = function (data) {
   } else {
     $('.song-bars').text('')
     $('.song-message').text('You have no songs.').show().fadeOut(2000)
+    $('.prompt-div').text('Enter song info to add a song.')
   }
 }
 const updateSuccess = function () {
@@ -63,7 +64,7 @@ const updateSuccess = function () {
     .then(onGetSuccess)
 }
 const deleteSongSuccess = function () {
-  $('.song-message').text('Song deleted.').show().fadeOut(2000)
+  $('.song-message').text('Song deleted.').show().fadeOut(3000)
   userApi.get()
     .then(onGetSuccess)
 }
