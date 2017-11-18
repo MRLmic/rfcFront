@@ -18,7 +18,7 @@ const get = function () {
     url: config.apiOrigin + '/songs',
     method: 'GET',
     headers: {
-      Authorization: 'Token token' + store.token
+      Authorization: 'Token token=' + store.token
     }
   })
 }
