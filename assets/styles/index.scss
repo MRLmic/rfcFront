@@ -2,7 +2,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: #e6e6fa;
+  background-image: url("https://drive.google.com/uc?id=13LVjM6Y8fPS8C9nxEMHHr7GUOAJR9jWi");
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .creates {
@@ -16,7 +17,6 @@ body {
 
 div {
   border: 2px solid black;
-  font-family: "Helvetica", sans-serif;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -43,7 +43,13 @@ div {
 }
 
 h1 {
+  border-bottom: 8px double;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 40px;
+  margin: 0 auto;
+  padding: 12px;
   text-align: center;
+  width: 40%;
 }
 
 #password-message {
