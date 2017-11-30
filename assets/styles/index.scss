@@ -25,12 +25,11 @@ body {
 }
 
 div {
-  border: 2px solid black;
   font-family: "Helvetica", sans-serif;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  width: 45%;
+  width: 80%;
   z-index: 1;
   background-color: white;
 }
@@ -87,11 +86,13 @@ img {
   width: 30%;
   height: auto;
 }
+
 #password-message {
   border: 0;
 }
 
 .prompt-div {
+  border-radius: 5px;
   font-size: 16px;
   height: 150px;
   text-align: center;
@@ -123,3 +124,19 @@ overflow-wrap: word-break;
 text-align: center;
 width: 150px;
 }
+
+button[type=submit] {
+  background: rgba(66, 244, 200, 0.6);
+  border: 0;
+  border-radius: 35px;
+}
+
+input {
+  background: transparent;
+  border: 0;
+  font-family: 'Exo 2', sans-serif;
+  outline: 0;
+  margin-right: 20px;
+  border-bottom: 1px solid black;
+}
+/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani), url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;} /* End http://www.cursors-4u.com */
