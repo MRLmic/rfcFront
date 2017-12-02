@@ -17,6 +17,7 @@ $(() => {
   $('#songs-index').hide()
   $('.show-songs').hide()
   $('#deletes').hide()
+  $('.collapse').collapse()
 })
 
 // use require with a reference to bundle the file and use it in this file

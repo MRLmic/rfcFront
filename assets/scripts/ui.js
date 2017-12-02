@@ -21,7 +21,7 @@ const onGetFailure = function (data) {
 const onGetSuccess = function (data) {
   if (data.songs.length > 0) {
     $('.prompt-div').text('All songs:')
-    let songHTML = songHandles({ songs: data.songs })
+    const songHTML = songHandles({ songs: data.songs })
     $('.song-bars').text('')
     $('.song-bars').append(songHTML)
     $('.update-song').show()
@@ -39,7 +39,7 @@ const onGetSuccess = function (data) {
       $('.update-song').hide()
       $('.delete-song').hide()
       $(this).closest('h4').append('<form class="update-a-song"><div class="form-message">Enter the new information here. All fields are required.</div><div class="form-group"><input type="text" name="song[title]" id="new_title" placeholder="Title"><input type="text" name="song[artist]" id="new_artist" placeholder="Artist"><input type="hidden" name="song[written_by]" id="original_check" value="false"><input type="checkbox" name="song[written_by]" id="original_check" value="true" checked><label for="chk_email_alerts">Song originally recorded by this artist?</label><input type="text" name="song[year]" id="new_year" placeholder="Year Recorded"><button type="submit" class="btn btn-default">Update Song</button></div></form><button type="submit" class="btn btn-default" id="cancel-update">Cancel</button>')
-      $(".update-a-song").on('submit', function (event) {
+      $('.update-a-song').on('submit', function (event) {
         event.preventDefault()
         const songId = $(this).closest('h4').data('id')
         const data = getFormFields(this)

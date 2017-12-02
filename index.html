@@ -2,68 +2,112 @@
 <html>
     <head>
       <title>RunForCover</title>
+      <link rel="shortcut icon" type="image/x-icon" href="https://drive.google.com/uc?id=0B40BcAMbam60bHNvdzFtbWhwZUU">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- rel=stylesheet removed -->
-      <link type="text/css" href="./assets/styles/index.scss">
+      <link href="./assets/styles/index.scss" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Hind+Siliguri|Rajdhani:700|Pacifico|Exo+2" rel="stylesheet">
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="./assets/styles/cactus.ico">
-      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Hind+Siliguri|Rajdhani:700|Pacifico|exo+2" rel="stylesheet">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <section class="main-content">
+    <body class="container-fluid body">
       <img src="https://drive.google.com/uc?id=1i5EPmQctRRS54yjVnBuAUNG4l0amB_1f" alt="Star Logo">
-      <div class="prompt-div">Welcome to Run For Cover, the app where you keep track of your favorite songs and  cover versions of those songs.<br> Please sign up or sign in!</div>
+      <div class="prompt-div">Welcome to Run For Cover, the app where you keep track of your favorite songs and  cover versions of those songs.<br> Please sign up or sign in!
+      </div>
 
        <!-- create song form -->
         <div class="creates">
           Input song information here to add a song to your list.
-        <form class="auth" id="create-a-song">
-        <div class="form-group">
-          <input type="text" name="song[title]" id="new_title" placeholder="Title">
-          <input type="text" name="song[artist]" id="new_artist" placeholder="Artist"><br>
-          <input type="hidden" name="song[written_by]" id="original_check" value="false">
-          <input type="checkbox" name="song[written_by]" id="original_check" value="true" checked><label for='chk_email_alerts'>Song originally recorded by this artist?</label>
-          <input type="text" name="song[year]" id="new_year" placeholder="Year Recorded">
-          <button type="submit" class="btn btn-default">Add Song</button>
+          <form class="auth" id="create-a-song">
+            <div class="form-group">
+              <input type="text" name="song[title]" id="new_title" placeholder="Title">
+              <input type="text" name="song[artist]" id="new_artist" placeholder="Artist"><br>
+              <input type="hidden" name="song[written_by]" id="original_check" value="false">
+              <input type="checkbox" name="song[written_by]" id="original_check" value="true" checked><label for='chk_email_alerts'>Song originally recorded by this artist?</label>
+              <input type="text" name="song[year]" id="new_year" placeholder="Year Recorded">
+              <button type="submit" class="btn btn-default">Add Song</button>
+            </div>
+          </form>
+        <div class="song-message">
         </div>
-        </form>
-        <div class="song-message"></div>
         <div class="song-bars">
         </div>
       </div>
 
         <!-- show all songs -->
         <div class="show-songs">
-        <form class="auth" id="songs-index">
+          <form class="auth" id="songs-index">
             <div class="form-group">
               <button type="submit" class="btn btn-default">Show All Songs</button>
             </div>
-        </form>
-      </div>
-
+          </form>
+        </div>
 
       <!-- all auth html -->
-      <div class="log-in-stuff">
-      <form class="auth" id="sign-up">
-      <div class="form-group">
-        <input type="text" name="credentials[email]" id="email" placeholder="Email">
-        <input type="password" name="credentials[password]" id="password" placeholder="Password">
-        <input type="password" name="credentials[password_confirmation]" id="password_confirmation" placeholder="Password Confirmation">
-        <button type="submit" class="btn btn-default">Sign Up</button>
+      <div class="auth-container">
+        <div id="accordion" role="tablist">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Sign In
+        </a>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <div class="log-in-stuff">
+        <form class="auth" id="sign-in">
+        <div class="form-group">
+        <input type="text" name="credentials[email]" id="email" placeholder="Email"><br>
+        <input type="password" name="credentials[password]" id="password" placeholder="Password"><br>
+        <button type="submit" class="btn btn-default">Sign In</button>
       </div>
       </form>
       </div>
-      <div class="log-in-stuff">
-      <form class="auth" id="sign-in">
-      <div class="form-group">
-      <input type="text" name="credentials[email]" id="email" placeholder="Email">
-      <input type="password" name="credentials[password]" id="password" placeholder="Password">
-      <button type="submit" class="btn btn-default">Sign In</button>
+      </div>
     </div>
-    </form>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Sign Up
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <div class="log-in-stuff">
+        <form class="auth" id="sign-up">
+        <div class="form-group">
+          <input type="text" name="credentials[email]" id="email" placeholder="Email"><br>
+          <input type="password" name="credentials[password]" id="password" placeholder="Password"><br>
+          <input type="password" name="credentials[password_confirmation]" id="password_confirmation" placeholder="Password Confirmation"><br>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          About the App
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Blah blah blah blah
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     <div class="form-wrapper" id="sign-out-change">
     <form class="auth" id="sign-out">
@@ -80,7 +124,6 @@
         <button type="submit" name="changepassword">Submit to Reset Password</button>
       </div>
       </form>
-    </section>
     </body>
   </div>
     <footer>Made with 🐨 by Melissa Luna<br>
