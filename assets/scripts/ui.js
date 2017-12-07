@@ -94,6 +94,7 @@ const onSignInSuccess = function (data) {
   $('#sign-out-change').show()
   $('#songs-index').show()
   $('.show-songs').show()
+  $('.auth-container').hide()
   store.user = data.user
   store.token = data.user.token
 }

@@ -32,8 +32,8 @@ footer {
 }
 
 .iconz:hover {
-  cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani);
-   // url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;
+  cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani),
+   url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;
 }
 
 iframe {
@@ -106,30 +106,21 @@ width: 150px;
 
 .auth-container {
   background: url(https://drive.google.com/uc?id=1pn2eTB97Jc8DGa4gSgxbHN5ImQ6vfFKJ);
-  border-top: 7px #f7f4ea;
-  bottom: 0;
+  box-sizing: border-box;
+  display: inline-block;
   height: auto;
   margin: 0 auto;
-  min-height: 200px;
-  padding-top: 10px;
-  padding-bottom: 0;
-  position: static;
-}
-
-.card first {
-  padding-top: 10px;
-}
-
-.card last {
-  padding-bottom: 10px;
+  min-height: 250px;
+  position: sticky;
+  width: 100%;
 }
 
 .card {
   background: #ffffff;
-  border: 4px #000000;
   border-radius: 3px;
-  color: #000000;
+  min-height: 30px;
   margin: 0 auto;
+  position: relative;
   text-align: center;
   width: 30%;
 }
@@ -140,37 +131,21 @@ width: 150px;
 
 button[type=submit] {
   background: rgba(66, 244, 200, 0.6);
-  border: 0;
-  height: 35px;
+  box-sizing: border-box;
   border-radius: 10px;
-  padding-bottom: 12px;
+  margin: 7px;
+  padding: 8px;
 }
 
 .log-in-stuff input {
   background: transparent;
   border: 0;
-  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
   outline: 0;
   margin-right: 20px;
-  padding: 5px;
-  padding-bottom: 10px;
   border-bottom: 1px solid black;
   width: 200px;
 }
-
-.log-in-stuff input last {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-// .log-in-stuff {
-//   background: #ffffff;
-//   border-radius: 8px;
-//   display: block;
-//   margin: 0 auto;
-//   padding: 20px;
-//   text-align: center;
-//   width: 20%;
-// }
 
 button[type=submit]:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani), url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;} /* End http://www.cursors-4u.com */
