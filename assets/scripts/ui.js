@@ -95,6 +95,7 @@ const onSignInSuccess = function (data) {
   $('#songs-index').show()
   $('.show-songs').show()
   $('.auth-container').hide()
+  $('.logo').hide()
   store.user = data.user
   store.token = data.user.token
 }
@@ -105,6 +106,8 @@ const onSignInFailure = function (data) {
 
 const onSignOutSuccess = function (data) {
   $('.prompt-div').text('Signed out. Please sign up or sign in to use the app.')
+  $('.auth-container').show()
+  $('.logo').show()
   $('.song-bars').hide()
   $('#sign-up').show()
   $('#sign-in').show()

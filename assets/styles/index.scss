@@ -110,7 +110,7 @@ width: 150px;
   display: inline-block;
   height: auto;
   margin: 0 auto;
-  min-height: 250px;
+  min-height: 165px;
   position: sticky;
   width: 100%;
 }
@@ -148,4 +148,11 @@ button[type=submit] {
   width: 200px;
 }
 
-button[type=submit]:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani), url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;} /* End http://www.cursors-4u.com */
+button[type=submit]:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-11/nat1034.ani), url(http://cur.cursors-4u.net/nature/nat-11/nat1034.gif), progress !important;}
+
+#sign-out-change {
+  display: inline-flex;
+  float: right;
+  position: sticky;
+  top: 0;
+}
